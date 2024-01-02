@@ -1,0 +1,10 @@
+RewriteEngine On
+
+ReWriteCond %{REQUEST_FILENAME} !-d
+ReWriteCond %{REQUEST_FILENAME} !-f
+ReWriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+ErrorDocument 404 /views/error_page/404.html

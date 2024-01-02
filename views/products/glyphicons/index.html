@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../resources/datatables/datatables.bootstrap.min.css">
+</head>
+<body ng-app="jShop" ng-controller="productCtrl">
+
+<div class="container">
+<h1>Demo : Simple Demo of datatable with angular Application</h1>
+  <table class="table table-striped table-bordered" datatable="ng" dt-options="vm.dtOptions">
+    <thead>
+      <tr><th>Sr</th><th>Name</th><th>Age</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in userList">
+        <td>{{$index + 1}}</td>
+        <td>
+          {{user.name}}
+        </td>
+        <td>{{user.age}}</td>
+		<td><div class="btn-group">
+                <button type="button" class="btn btn-default btn" ng-click="edit($index);"><i class="glyphicon glyphicon-pencil"></i></button>  
+                <button type="button" class="btn btn-default btn" ng-click="delete();"><i class="glyphicon glyphicon-trash"></i></button> 
+                </div></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  
+<script src="../../resources/js/jquery.min.js"></script>
+<script src="../../resources/js/angular.min.js"></script>
+<script src="../../resources/datatables/jquery.dataTables.min.js"></script>
+<script src="../../resources/datatables/angular-datatables.min.js"></script>
+<script src="../../resources/datatables/angular-datatables.bootstrap.min.js"></script>
+<script src="../../resources/js/app.js"></script>
+<script src="../../resources/js/controller.js"></script>
+
+</body>
+</html>
+
