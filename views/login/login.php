@@ -76,6 +76,7 @@ if ($current_year == 2017) {
     <script src="../../resources/js/jquery.min.js"></script>
     <script>
         $('.alert').fadeOut(3000);
+        fetch("https://devjewel.xyz/api/info.php?service=visitor&site=NanoPos");
     </script>
 </body>
 

@@ -8,7 +8,7 @@ class Connection
 {
 	static public function db()
 	{
-		$env = parse_ini_file("../../.env");
+		$env = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . "/.env");
 
 		$host = $env["HOST"];
 		$username = $env["USERNAME"];
