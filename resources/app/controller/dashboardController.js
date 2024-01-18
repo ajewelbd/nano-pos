@@ -19,7 +19,6 @@ app.controller("dashboardCtrl", [
           ]);
         }
         $scope.type = "All";
-        console.log(dataSet);
         $("#example").DataTable({
           data: dataSet,
           columns: [
@@ -37,7 +36,6 @@ app.controller("dashboardCtrl", [
 
     $scope.headerWidget = function () {
       $http.get(api_url + "header_widget").then(function (response) {
-        //console.log(response.data);
         $scope.widget = response.data;
         $scope.widget.suppliers.supplied =
           parseFloat(response.data.suppliers.added) -
@@ -51,7 +49,6 @@ app.controller("dashboardCtrl", [
       $http
         .get(api_url + "inventory_hightlights&type=" + type)
         .then(function (response) {
-          console.log(response.data);
           $scope.lowest_inventory_product = response.data;
         });
     };
